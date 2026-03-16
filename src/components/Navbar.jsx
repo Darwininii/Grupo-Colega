@@ -23,7 +23,7 @@ export default function Navbar() {
     const sections = navLinks.map(link => link.href.substring(1));
     const observerOptions = {
       root: null,
-      rootMargin: '-40% 0px -40% 0px', // Detect section when it's near the center
+      rootMargin: '-20% 0px -60% 0px', // Detects when section enters top 40% of viewport
       threshold: 0
     };
 
