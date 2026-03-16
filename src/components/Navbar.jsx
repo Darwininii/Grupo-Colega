@@ -46,10 +46,10 @@ export default function Navbar() {
   return (
     <div className="sticky top-0 z-50 w-full h-20 md:h-28 pointer-events-none">
       <nav
-        className={`pointer-events-auto absolute left-0 right-0 mx-auto transition-all duration-500 ease-in-out border-b transform-gpu top-0 ${
+        className={`pointer-events-auto absolute left-0 right-0 mx-auto transition-all duration-500 ease-in-out border-b transform-gpu top-0 will-change-transform ${
           scrolled 
-            ? 'w-fit max-w-[95%] rounded-full bg-navy-1000/95 backdrop-blur-xl border-white/10 shadow-2xl px-2 translate-y-4 md:translate-y-5' 
-            : 'w-full rounded-none bg-navy-900 border-transparent shadow-md translate-y-0'
+            ? 'translate-y-4 w-fit max-w-[95%] rounded-full bg-navy-1000/95 backdrop-blur-xl border-white/10 shadow-2xl px-2' 
+            : 'translate-y-0 w-full rounded-none bg-navy-900 border-transparent shadow-md'
         }`}
       >
         {/* Gradient overlay — fades out on scroll */}

@@ -5,7 +5,7 @@ const valores = ['Disciplina', 'Equipo', 'Integridad', 'Servicio', 'Respeto'];
 
 export default function PrincipiosSection() {
   return (
-    <section id="principios" className="py-16 md:py-24 bg-white">
+    <section id="principios" className="py-16 md:py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Encabezado */}
         <motion.div
@@ -41,8 +41,8 @@ export default function PrincipiosSection() {
         {/* Misión y Visión */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 md:mb-16">
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="bg-white rounded-2xl shadow-lg border border-surface-200 p-8 md:p-10 hover:shadow-2xl transition-shadow duration-300 group"
@@ -59,8 +59,8 @@ export default function PrincipiosSection() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="bg-white rounded-2xl shadow-lg border border-surface-200 p-8 md:p-10 hover:shadow-2xl transition-shadow duration-300 group"
