@@ -46,7 +46,7 @@ export default function PrincipiosSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="group relative bg-linear-to-b from-white to-brand-50/10 rounded-3xl p-8 md:p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-brand-100/50 overflow-hidden"
+            className="group relative bg-linear-to-b from-white to-brand-50/10 rounded-3xl p-8 md:p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-black/20 overflow-hidden"
           >
             {/* Barra de acento superior */}
             <div className="absolute top-0 left-0 w-full h-1.5 bg-brand-500 transition-transform duration-500 origin-left" />
@@ -78,7 +78,7 @@ export default function PrincipiosSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="group relative bg-linear-to-b from-white to-purple-50/10 rounded-3xl p-8 md:p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-purple-100/50 overflow-hidden"
+            className="group relative bg-linear-to-b from-white to-purple-50/10 rounded-3xl p-8 md:p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-black/20 overflow-hidden"
           >
             {/* Barra de acento superior */}
             <div className="absolute top-0 left-0 w-full h-1.5 bg-[#7a3b8c] transition-transform duration-500 origin-left" />
