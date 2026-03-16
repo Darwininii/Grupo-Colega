@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { HiShieldCheck, HiEye } from 'react-icons/hi';
+import { FaEye, FaShieldAlt } from 'react-icons/fa';
 
 const valores = ['Disciplina', 'Equipo', 'Integridad', 'Servicio', 'Respeto'];
 
@@ -40,40 +40,68 @@ export default function PrincipiosSection() {
 
         {/* Misión y Visión */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 md:mb-16">
+          {/* Tarjeta Misión */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg border border-surface-200 p-8 md:p-10 hover:shadow-2xl transition-shadow duration-300 group"
+            className="group relative bg-linear-to-b from-white to-brand-50/10 rounded-3xl p-8 md:p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-brand-100/50 overflow-hidden"
           >
-            <div className="w-14 h-14 rounded-xl bg-brand-500/10 flex items-center justify-center mb-5 group-hover:bg-brand-500/20 transition-colors">
-              <HiShieldCheck className="text-brand-600 text-2xl" />
+            {/* Barra de acento superior */}
+            <div className="absolute top-0 left-0 w-full h-1.5 bg-brand-500 transition-transform duration-500 origin-left" />
+
+            {/* Elemento decorativo de fondo (Watermark) */}
+            {/* <FaShieldAlt className="absolute -bottom-6 -right-6 text-9xl text-brand-500/5 -rotate-12 transition-transform duration-700 group-hover:scale-110 group-hover:rotate-0" /> */}
+
+            {/* Contenedor de Icono Estilizado */}
+            <div className="relative mb-6">
+              <div className="absolute inset-0 bg-brand-400/20 blur-xl rounded-full scale-75 group-hover:scale-110 transition-transform duration-500" />
+              {/* <div className="relative w-16 h-16 rounded-2xl bg-white shadow-md flex items-center justify-center border border-brand-100 group-hover:border-brand-300 transition-colors">
+                <FaShieldAlt className="text-brand-600 text-3xl" />
+              </div> */}
             </div>
-            <h3 className="text-2xl font-bold text-navy-900 mb-3">Misión</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Brindar servicios de seguridad privada de la más alta calidad, protegiendo
-              a nuestros clientes con personal altamente capacitado, tecnología de vanguardia
-              y un compromiso inquebrantable con la integridad y la excelencia operativa.
-            </p>
+
+            <div className="relative z-10">
+              <h3 className="text-2xl font-black text-navy-950 mb-4 tracking-tight">Misión</h3>
+              <p className="text-gray-600 leading-relaxed text-base md:text-[17px] font-medium opacity-90">
+                Brindar servicios de seguridad privada de la más alta calidad, protegiendo
+                a nuestros clientes con personal altamente capacitado, tecnología de vanguardia
+                y un compromiso inquebrantable con la integridad y la excelencia operativa.
+              </p>
+            </div>
           </motion.div>
 
+          {/* Tarjeta Visión */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg border border-surface-200 p-8 md:p-10 hover:shadow-2xl transition-shadow duration-300 group"
+            className="group relative bg-linear-to-b from-white to-purple-50/10 rounded-3xl p-8 md:p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-purple-100/50 overflow-hidden"
           >
-            <div className="w-14 h-14 rounded-xl bg-accent-500/10 flex items-center justify-center mb-5 group-hover:bg-accent-500/20 transition-colors">
-              <HiEye className="text-accent-600 text-2xl" />
+            {/* Barra de acento superior */}
+            <div className="absolute top-0 left-0 w-full h-1.5 bg-[#7a3b8c] transition-transform duration-500 origin-left" />
+
+            {/* Elemento decorativo de fondo (Watermark) */}
+            {/* <FaEye className="absolute -bottom-6 -right-6 text-9xl text-purple-600/5 rotate-12 transition-transform duration-700 group-hover:scale-110 group-hover:rotate-0" /> */}
+
+            {/* Contenedor de Icono Estilizado */}
+            <div className="relative mb-6">
+              <div className="absolute inset-0 bg-purple-400/20 blur-xl rounded-full scale-75 group-hover:scale-110 transition-transform duration-500" />
+              {/* <div className="relative w-16 h-16 rounded-2xl bg-white shadow-md flex items-center justify-center border border-purple-100 group-hover:border-purple-300 transition-colors">
+                <FaEye className="text-accent-600 text-3xl" />
+              </div> */}
             </div>
-            <h3 className="text-2xl font-bold text-navy-900 mb-3">Visión</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Ser la empresa líder en seguridad privada en México, reconocida por nuestra
-              innovación, profesionalismo y por generar ambientes seguros que permitan a
-              nuestros clientes desarrollarse con total confianza y tranquilidad.
-            </p>
+
+            <div className="relative z-10">
+              <h3 className="text-2xl font-black text-navy-950 mb-4 tracking-tight">Visión</h3>
+              <p className="text-gray-600 leading-relaxed text-base md:text-[17px] font-medium opacity-90">
+                Ser la empresa líder en seguridad privada en México, reconocida por nuestra
+                innovación, profesionalismo y por generar ambientes seguros que permitan a
+                nuestros clientes desarrollarse con total confianza y tranquilidad.
+              </p>
+            </div>
           </motion.div>
         </div>
 

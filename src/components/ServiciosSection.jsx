@@ -8,6 +8,7 @@ import img5 from '../assets/5.png';
 import img7 from '../assets/7.png';
 import img8 from '../assets/8.png';
 import imgCCTV from '../assets/milosz-klinowski-BW0d0IllW8E-unsplash-scaled.jpg';
+import { FaHandshakeAngle } from 'react-icons/fa6';
 
 const services = [
   {
@@ -15,7 +16,7 @@ const services = [
     title: 'Guardia Intramuros',
     desc: 'Seguridad física dentro de instalaciones residenciales e industriales.',
     color: 'from-brand-600 to-brand-700',
-    bgClass: 'bg-brand-600',
+    bgClass: 'bg-brand-600/80',
     image: img3,
   },
   {
@@ -23,7 +24,7 @@ const services = [
     title: 'Guardia Premium',
     desc: 'Personal de élite para protección ejecutiva y eventos especiales.',
     color: 'from-navy-700 to-navy-800',
-    bgClass: 'bg-navy-700',
+    bgClass: 'bg-navy-700/80',
     image: img4,
   },
   {
@@ -31,7 +32,7 @@ const services = [
     title: 'Guardia Recepcionista',
     desc: 'Control de acceso con trato profesional y cordial.',
     color: 'from-accent-600 to-accent-700',
-    bgClass: 'bg-accent-600',
+    bgClass: 'bg-accent-600/80',
     image: img5,
   },
   {
@@ -39,7 +40,7 @@ const services = [
     title: 'Custodia de Valores',
     desc: 'Traslado y protección de bienes con máxima discreción.',
     color: 'from-brand-500 to-brand-700',
-    bgClass: 'bg-brand-500',
+    bgClass: 'bg-brand-500/80',
     image: img7,
   },
   {
@@ -47,7 +48,7 @@ const services = [
     title: 'Seguridad Electrónica',
     desc: 'Sistemas de vigilancia, alarmas y tecnología de punta.',
     color: 'from-navy-800 to-navy-950',
-    bgClass: 'bg-navy-800',
+    bgClass: 'bg-navy-800/80',
     image: imgCCTV,
   },
   {
@@ -55,7 +56,7 @@ const services = [
     title: 'Monitoreo CCTV',
     desc: 'Vigilancia remota 24/7 desde nuestra central de monitoreo.',
     color: 'from-brand-700 to-navy-700',
-    bgClass: 'bg-brand-700',
+    bgClass: 'bg-brand-700/80',
     image: img8,
   },
 ];
@@ -84,8 +85,8 @@ export default function ServiciosSection() {
         </motion.div>
 
         {/* Contenedor de servicios */}
-        {/* En móvil: Bloques sólidos, sin separación, diseño plano (inspirado en la referencia) */}
-        <div className="-mx-4 md:mx-0 flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-0 md:gap-4 relative mt-6 md:mt-0">
+        {/* En móvil: Bloques sólidos con imagen de fondo, sin separación, diseño plano */}
+        <div className="-mx-4 md:mx-0 flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-0 md:gap-6 relative mt-6 md:mt-0">
           {services.map((svc, i) => {
             return (
               <motion.div
@@ -94,53 +95,64 @@ export default function ServiciosSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
                 viewport={{ once: true, margin: '-10%' }}
-                /* Flat, solid color blocks on Mobile. */
-                className={`group overflow-hidden w-full ${svc.bgClass}
+                /* Flat, solid color blocks with background images. */
+                className={`group overflow-hidden w-full
                   p-6 sm:p-8
-                  min-h-[160px] md:h-auto
+                  min-h-[180px] md:h-72
                   sticky md:relative top-0 md:top-auto
-                  rounded-none md:rounded-lg border-b border-white/10 md:border-transparent
-                  flex flex-col items-center justify-center text-center
+                  rounded-none md:rounded-2xl border-b border-white/10 md:border-transparent
+                  flex flex-col items-center justify-center text-center shadow-lg
                 `}
                 style={{
-                  /* Ajustamos el top dinámico para que se acomoden escalonadas bajo el Navbar */
-                  top: `calc(90px + ${i * 0}px)`, // 0px offset hace que se apilen exactamente una sobre otra reemplazandose
+                  top: `calc(90px + ${i * 0}px)`,
                   zIndex: i + 1,
                 }}
               >
-                <svc.icon className="text-white text-4xl md:text-5xl mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-white font-bold text-lg md:text-xl tracking-wide leading-tight px-2">
-                  {svc.title}
-                </h3>
-                {/* Texto descriptivo limpio */}
-                <p className="mt-2 text-white/90 font-medium text-sm leading-relaxed max-w-sm">
-                  {svc.desc}
-                </p>
+                {/* Imagen de fondo restaurada */}
+                <img
+                  src={svc.image}
+                  alt={svc.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-110"
+                />
+
+                {/* Overlay sólido con opacidad reducida para apreciar mejor las imágenes */}
+                <div
+                  className={`absolute inset-0 ${svc.bgClass} opacity-80 md:opacity-75 md:group-hover:opacity-85 transition-opacity duration-500`}
+                />
+
+                <div className="relative z-10 flex flex-col items-center">
+                  <svc.icon className="text-white text-4xl md:text-5xl mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300" />
+                  <h3 className="text-white font-bold text-lg md:text-xl tracking-wide leading-tight px-2">
+                    {svc.title}
+                  </h3>
+                  <p className="mt-2 text-white/90 font-medium text-sm leading-relaxed max-w-sm">
+                    {svc.desc}
+                  </p>
+                </div>
               </motion.div>
             );
           })}
         </div>
 
         {/* Bloques extra: Consultoría y Asesoría */}
-        {/* Diseño plano y minimalista basado en la referencia */}
+        {/* Diseño plano y minimalista con separación aumentada en desktop */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="-mx-4 md:mx-0 mt-0 md:mt-4 grid grid-cols-1 md:grid-cols-2 gap-0 border-b md:border-b-0 border-white/10"
+          className="-mx-4 md:mx-0 mt-0 md:mt-20 grid grid-cols-1 md:grid-cols-2 gap-0 border-b md:border-b-0 border-white/10"
         >
           {/* Tarjeta 1: Consultoría - Fondo gris claro */}
-          <div className="bg-[#f4f4f4] text-navy-950 flex flex-col items-center justify-center text-center p-8 sm:p-10 min-h-[160px] md:h-auto border-b md:border-b-0 md:border-r border-gray-200">
-            {/* Opcional: reemplazar con un icono de apretón de manos real si se importa FaHandshake. Usando uno similar por ahora. */}
-            <HiClipboardDocumentCheck className="text-5xl text-navy-950 mb-3" />
+          <div className="bg-white text-navy-950 flex flex-col items-center justify-center text-center p-8 sm:p-12 min-h-[180px] md:h-auto">
+            <FaHandshakeAngle className="text-5xl text-navy-950 mb-3" />
             <h3 className="font-semibold text-[15px] md:text-lg tracking-wide max-w-sm">
               Consultoría en seguridad y análisis de riesgos.
             </h3>
           </div>
 
           {/* Tarjeta 2: Asesoría - Fondo blanco */}
-          <div className="bg-white text-navy-950 flex flex-col items-center justify-center text-center p-8 sm:p-10 min-h-[160px] md:h-auto">
+          <div className="bg-white text-navy-950 flex flex-col items-center justify-center text-center p-8 sm:p-12 min-h-[180px] md:h-auto">
             <HiScale className="text-5xl text-[#7a3b8c] mb-3" />
             <h3 className="font-semibold text-[15px] md:text-lg tracking-wide max-w-sm">
               Asesoría jurídica laboral.
