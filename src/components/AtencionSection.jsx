@@ -6,8 +6,8 @@ const pasos = [
   { num: 1, titulo: 'Obtener CURP', desc: 'Descarga tu Clave Única de Registro de Población desde el portal oficial.', link: 'https://www.gob.mx/curp/' },
   { num: 2, titulo: 'Obtener RFC', desc: 'Genera tu Registro Federal de Contribuyentes en línea.', link: 'https://www.sat.gob.mx/tramites/28753/obten-tu-rfc-con-la-clave-unica-de-registro-de-poblacion-curp' },
   { num: 3, titulo: 'Acta de Nacimiento', desc: 'Solicita una copia certificada de tu acta de nacimiento.', link: 'https://www.gob.mx/ActaNacimiento/folioSeguimiento/' },
-  { num: 4, titulo: 'Comprobante de Domicilio', desc: 'Reúne un comprobante de domicilio reciente (no mayor a 3 meses).', link: "https://www.imss.gob.mx/derechoH/nss" },
-  { num: 5, titulo: 'Credencial INE', desc: 'Asegúrate de contar con tu identificación oficial vigente.', link: 'https://www.gob.mx/' },
+  { num: 4, titulo: 'Obtén tu número del seguro social (IMSS)', desc: 'Reúne un comprobante de domicilio reciente (no mayor a 3 meses).', link: "https://www.imss.gob.mx/derechoH/nss" },
+  { num: 5, titulo: 'Cartilla del Servicio Militar Nacional', desc: 'Asegúrate de contar con tu identificación oficial vigente.', link: 'https://www.gob.mx/' },
   { num: 6, titulo: 'Contáctanos por Facebook', desc: 'Escríbenos por Facebook para completar tu proceso de registro.', link: 'https://www.facebook.com/profile.php?id=100094731752828&mibextid=ZbWKwL', isFacebook: true },
 ];
 
